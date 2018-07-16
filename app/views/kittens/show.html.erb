@@ -1,0 +1,7 @@
+<p>Kitten: <%= @kitten.id %>
+<p>Name: <%= @kitten.name %></p>
+<p>Age: <%= @kitten.age %></p>
+<p>Softness Degree: <%= @kitten.softness %></p>
+<p>Cuteness Degree: <%= @kitten.cuteness %> </p>
+<%= link_to "delete", @kitten, method: :delete, data: { confirm: "You wanna delete this little fluffy thing?" } %>
+<hr>

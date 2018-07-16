@@ -1,0 +1,15 @@
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+<%= link_to "New Kitten", new_kitten_path %>
+<% @kittens.each_with_index do |kitten, i| %>
+  <p>Kitten: <%= i + 1 %>
+  <p>Name: <%= kitten.name %></p>
+  <p>Age: <%= kitten.age %></p>
+  <p>Softness Degree: <%= kitten.softness %></p>
+  <p>Cuteness Degree: <%= kitten.cuteness %> </p>
+  <%= link_to "edit", edit_kitten_path(kitten) %>
+  <%= link_to "delete", kitten, method: :delete, data: { confirm: "You wanna delete this little fluffy thing?" } %>
+  <hr>
+<% end %>
